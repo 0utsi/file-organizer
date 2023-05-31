@@ -10,20 +10,18 @@ their respective folders.
 
 Clone the repository or download the source code.
 Open a terminal or command prompt and navigate to the project directory.
-Run the following command to install the required dependencies:
-Copy code
-npm install
-Usage
+
+## Usage
+
 To use the application, follow these steps:
 
-Open a terminal or command prompt.
-Navigate to the project directory.
+1.Open a terminal or command prompt.
+2.Navigate to the project directory.
+3.Run the following command:
 
-Run the following command:
-
-- node app.js --directory <directory_path>
+- node app.js -d <directory_path>
 
 Replace <directory_path> with the path to the directory you want to organize.
 
 License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License

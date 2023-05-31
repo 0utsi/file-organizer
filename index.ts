@@ -22,20 +22,20 @@ const docDir = path.join(directoryPath, 'Document');
 const vidDir = path.join(directoryPath, 'Video')
 const instDir = path.join(directoryPath, 'Installers')
 
-function organizeFiles(directoryPath) {
+function organizeFiles(directoryPath: any) {
 
-	fs.readdir(directoryPath, (error, files) => {
+	fs.readdir(directoryPath, (error: any, files: any[]) => {
 		if (error) {
 			console.log('Something went wrong: ', error);
 			return;
 		}
 
-		files.forEach((file) => {
+		files.forEach((file: any) => {
 
 			const filePath = path.join(directoryPath, file);
 			const fileName = path.basename(filePath)
 
-			fs.stat(filePath, (error, stats) => {
+			fs.stat(filePath, (error: any, stats: { isFile: () => any; }) => {
 				if (error) {
 					console.log('Something went wrong: ', error);
 					return;
@@ -46,25 +46,25 @@ function organizeFiles(directoryPath) {
 					const fileExtension = path.extname(file);
 
 					if (extensions.music.includes(fileExtension)) {
-						fs.mkdir(musicDir, { recursive: true }, (error) => { console.log("Something went wrong: " + error) })
+						fs.mkdir(musicDir, { recursive: true }, (error: string) => { console.log("Something went wrong: " + error) })
 						var destPath = path.join(musicDir, fileName)
-						fs.rename(filePath, destPath, (error) => { console.log("Something went wrong: " + error) })
+						fs.rename(filePath, destPath, (error: string) => { console.log("Something went wrong: " + error) })
 					} else if (extensions.pictures.includes(fileExtension)) {
-						fs.mkdir(picDir, { recursive: true }, (error) => { console.log("Something went wrong: " + error) })
+						fs.mkdir(picDir, { recursive: true }, (error: string) => { console.log("Something went wrong: " + error) })
 						var destPath = path.join(picDir, fileName)
-						fs.rename(filePath, destPath, (error) => { console.log("Something went wrong: " + error) })
+						fs.rename(filePath, destPath, (error: string) => { console.log("Something went wrong: " + error) })
 					} else if (extensions.documents.includes(fileExtension)) {
-						fs.mkdir(docDir, { recursive: true }, (error) => { console.log("Something went wrong: " + error) })
+						fs.mkdir(docDir, { recursive: true }, (error: string) => { console.log("Something went wrong: " + error) })
 						var destPath = path.join(docDir, fileName)
-						fs.rename(filePath, destPath, (error) => { console.log("Something went wrong: " + error) })
+						fs.rename(filePath, destPath, (error: string) => { console.log("Something went wrong: " + error) })
 					} else if (extensions.video.includes(fileExtension)) {
-						fs.mkdir(vidDir, { recursive: true }, (error) => { console.log("Something went wrong: " + error) })
+						fs.mkdir(vidDir, { recursive: true }, (error: string) => { console.log("Something went wrong: " + error) })
 						var destPath = path.join(vidDir, fileName)
-						fs.rename(filePath, destPath, (error) => { console.log("Something went wrong: " + error) })
+						fs.rename(filePath, destPath, (error: string) => { console.log("Something went wrong: " + error) })
 					} else if (extensions.installer.includes(fileExtension)) {
-						fs.mkdir(instDir, { recursive: true }, (error) => { console.log("Something went wrong: " + error) })
+						fs.mkdir(instDir, { recursive: true }, (error: string) => { console.log("Something went wrong: " + error) })
 						var destPath = path.join(instDir, fileName)
-						fs.rename(filePath, destPath, (error) => { console.log("Something went wrong: " + error) })
+						fs.rename(filePath, destPath, (error: string) => { console.log("Something went wrong: " + error) })
 					}
 				}
 			});
