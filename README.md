@@ -23,5 +23,6 @@ To use the application, follow these steps:
 
 Replace <directory_path> with the path to the directory you want to organize.
 
-License
+## License
+
 This project is licensed under the MIT License
