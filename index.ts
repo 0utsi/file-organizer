@@ -75,4 +75,3 @@ function organizeFiles(directoryPath) {
 
 
 organizeFiles(directoryPath);
-// /Users/mati/Downloads
