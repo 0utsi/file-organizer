@@ -15,9 +15,9 @@ Open a terminal or command prompt and navigate to the project directory.
 
 To use the application, follow these steps:
 
-1.Open a terminal or command prompt.
-2.Navigate to the project directory.
-3.Run the following command:
+1. Open a terminal or command prompt.
+2. Navigate to the project directory.
+3. Run the following command:
 
 - node app.js -d <directory_path>
 
