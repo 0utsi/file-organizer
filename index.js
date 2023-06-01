@@ -65,7 +65,7 @@ function createDirectory(directory) {
         });
     });
 }
-function renameFile(sourcePath, destPath) {
+function moveFiles(sourcePath, destPath) {
     return new Promise(function (resolve, reject) {
         fs.rename(sourcePath, destPath, function (error) {
             if (error) {
@@ -104,7 +104,7 @@ function organizeFiles(directoryPath) {
                 case 4:
                     _a.sent();
                     destPath = path.join(musicDir, fileName);
-                    return [4 /*yield*/, renameFile(filePath, destPath)];
+                    return [4 /*yield*/, moveFiles(filePath, destPath)];
                 case 5:
                     _a.sent();
                     return [3 /*break*/, 18];
@@ -114,7 +114,7 @@ function organizeFiles(directoryPath) {
                 case 7:
                     _a.sent();
                     destPath = path.join(picDir, fileName);
-                    return [4 /*yield*/, renameFile(filePath, destPath)];
+                    return [4 /*yield*/, moveFiles(filePath, destPath)];
                 case 8:
                     _a.sent();
                     return [3 /*break*/, 18];
@@ -124,7 +124,7 @@ function organizeFiles(directoryPath) {
                 case 10:
                     _a.sent();
                     destPath = path.join(docDir, fileName);
-                    return [4 /*yield*/, renameFile(filePath, destPath)];
+                    return [4 /*yield*/, moveFiles(filePath, destPath)];
                 case 11:
                     _a.sent();
                     return [3 /*break*/, 18];
@@ -134,7 +134,7 @@ function organizeFiles(directoryPath) {
                 case 13:
                     _a.sent();
                     destPath = path.join(vidDir, fileName);
-                    return [4 /*yield*/, renameFile(filePath, destPath)];
+                    return [4 /*yield*/, moveFiles(filePath, destPath)];
                 case 14:
                     _a.sent();
                     return [3 /*break*/, 18];
@@ -144,7 +144,7 @@ function organizeFiles(directoryPath) {
                 case 16:
                     _a.sent();
                     destPath = path.join(instDir, fileName);
-                    return [4 /*yield*/, renameFile(filePath, destPath)];
+                    return [4 /*yield*/, moveFiles(filePath, destPath)];
                 case 17:
                     _a.sent();
                     _a.label = 18;

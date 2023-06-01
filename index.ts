@@ -34,7 +34,7 @@ function createDirectory(directory: any) {
 	});
 }
 
-function renameFile(sourcePath: any, destPath: any) {
+function moveFiles(sourcePath: any, destPath: any) {
 	return new Promise<void>((resolve, reject) => {
 		fs.rename(sourcePath, destPath, (error: any) => {
 			if (error) {
@@ -61,27 +61,26 @@ async function organizeFiles(directoryPath: any) {
 				if (extensions.music.includes(fileExtension)) {
 					await createDirectory(musicDir);
 					const destPath = path.join(musicDir, fileName);
-					await renameFile(filePath, destPath);
+					await moveFiles(filePath, destPath);
 				} else if (extensions.pictures.includes(fileExtension)) {
 					await createDirectory(picDir);
 					const destPath = path.join(picDir, fileName);
-					await renameFile(filePath, destPath);
+					await moveFiles(filePath, destPath);
 				} else if (extensions.documents.includes(fileExtension)) {
 					await createDirectory(docDir);
 					const destPath = path.join(docDir, fileName);
-					await renameFile(filePath, destPath);
+					await moveFiles(filePath, destPath);
 				} else if (extensions.video.includes(fileExtension)) {
 					await createDirectory(vidDir);
 					const destPath = path.join(vidDir, fileName);
-					await renameFile(filePath, destPath);
+					await moveFiles(filePath, destPath);
 				} else if (extensions.installer.includes(fileExtension)) {
 					await createDirectory(instDir);
 					const destPath = path.join(instDir, fileName);
-					await renameFile(filePath, destPath);
+					await moveFiles(filePath, destPath);
 				}
 			}
 		}
-
 		console.log('Organizing files complete.');
 	} catch (error) {
 		console.log('Something went wrong: ', error);
